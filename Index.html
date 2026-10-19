@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Raymond Shop | 5-Star Experience</title>
+  <style>
+    :root {
+      --bg: #0c090a;
+      --card-bg: #151012;
+      --raymond-red: #8B0000;
+      --raymond-gradient: linear-gradient(135deg, #a81c1c 0%, #8B0000 60%, #500000 100%);
+      --gold-primary: #d4af37;
+      --gold-gradient: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #996515 100%);
+      --text-main: #fcfcfd;
+      --text-muted: #a39ea0;
+      --border-color: rgba(212, 175, 55, 0.25);
+      --chip-bg: #1f181a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 12px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      width: 100%;
+      max-width: 410px;
+      border-radius: 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 14px 35px rgba(0,0,0,0.7);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Brand Header */
+    .header {
+      padding: 22px 16px 12px;
+      text-align: center;
+    }
+
+    .brand-emblem {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 10px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--raymond-gradient);
+      box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+    }
+
+    .brand-emblem span {
+      font-family: 'Georgia', serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -1px;
+    }
+
+    .brand-title {
+      font-family: 'Georgia', serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 3px;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .verified-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #201518;
+      border: 1px solid var(--border-color);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      margin-top: 8px;
+      color: #e5e5ea;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    /* 3-Step Guide */
+    .steps-bar {
+      display: flex;
+      justify-content: space-between;
+      margin: 6px 16px 10px;
+      background: #100b0d;
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .step-num {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--gold-primary);
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9.5px;
+      font-weight: 800;
+    }
+
+    /* Category Controls */
+    .controls {
+      padding: 0 16px 6px;
+    }
+
+    .pills {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: none;
+    }
+    .pills::-webkit-scrollbar { display: none; }
+
+    .pill {
+      background: var(--chip-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #a8a29e;
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .pill.active {
+      background: var(--raymond-gradient);
+      color: #ffffff;
+      border-color: var(--gold-primary);
+      font-weight: 700;
+    }
+
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    .unique-badge {
+      font-size: 10px;
+      color: #d4af37;
+      font-weight: 600;
+    }
+
+    .segmented-control {
+      display: flex;
+      background: #0f0a0c;
+      padding: 2px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .seg-btn {
+      background: transparent;
+      border: none;
+      color: #78716c;
+      font-size: 10.5px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .seg-btn.active {
+      background: #2a1f23;
+      color: #fff;
+    }
+
+    /* Review Box */
+    .review-wrapper {
+      padding: 0 16px 14px;
+    }
+
+    .review-box {
+      position: relative;
+      background: #0d090b;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 14px 44px 12px 14px;
+      min-height: 95px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .review-text {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #f5f5f4;
+      font-weight: 500;
+      outline: none;
+    }
+
+    .review-hint {
+      margin-top: 5px;
+      font-size: 9.5px;
+      color: #78716c;
+    }
+
+    .refresh-btn {
+      position: absolute;
+      right: 10px;
+      top: 12px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #23191c;
+      border: 1px solid var(--border-color);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    /* CTA Button */
+    .cta-btn {
+      margin-top: 12px;
+      width: 100%;
+      padding: 14px;
+      border-radius: 14px;
+      border: none;
+      background: var(--gold-gradient);
+      color: #0b0809;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3);
+    }
+
+    .cta-btn.copied {
+      background: #10b981;
+      color: #fff;
+    }
+
+    /* Footer Hub */
+    .footer-nav {
+      background: #100b0d;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 8px;
+    }
+
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .nav-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #1d1417;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- Brand Header -->
+    <div class="header">
+      <div class="brand-emblem">
+        <span>R</span>
+      </div>
+
+      <h1 class="brand-title">The Raymond Shop</h1>
+      <p class="brand-subtitle">TI Mall • South Tukoganj • Indore</p>
+
+      <div class="verified-pill">
+        <span style="color:#4285F4;font-weight:bold;">G</span> Google Verified Rating 
+        <span class="stars">★★★★★</span>
+      </div>
+    </div>
+
+    <!-- 3-Step Guide -->
+    <div class="steps-bar">
+      <div class="step-item"><span class="step-num">1</span> Pick Service</div>
+      <div class="step-item"><span class="step-num">2</span> Tap Button</div>
+      <div class="step-item"><span class="step-num">3</span> Paste & Post</div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <div class="pills">
+        <button class="pill active" onclick="setCategory(this, 'all')">✨ ALL EXPERIENCE</button>
+        <button class="pill" onclick="setCategory(this, 'tailoring')">🧵 CUSTOM TAILORING</button>
+        <button class="pill" onclick="setCategory(this, 'suiting')">👔 SUITS & FABRIC</button>
+        <button class="pill" onclick="setCategory(this, 'service')">⭐ STAFF & STORE</button>
+      </div>
+
+      <div class="lang-row">
+        <span class="unique-badge">⚡ Instant Unique Review</span>
+        <div class="segmented-control">
+          <button class="seg-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+          <button class="seg-btn" id="btn-hi" onclick="setLang('hi')">HINGLISH</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Section -->
+    <div class="review-wrapper">
+      <div class="review-box">
+        <div class="review-text" id="review-content" contenteditable="true" spellcheck="false">Loading review...</div>
+        <p class="review-hint">✎ Tap text above to personalize if needed</p>
+        <button class="refresh-btn" onclick="shuffleReview()" title="Next Review">⟳</button>
+      </div>
+
+      <button class="cta-btn" id="copy-btn" onclick="copyAndRedirect()">
+        <span>📋</span> COPY & RATE 5-STAR
+      </button>
+    </div>
+
+    <!-- Footer Action Hub -->
+    <div class="footer-nav">
+      <a href="https://maps.app.goo.gl/cDBaZ3pP6Av1aEYo9" class="nav-btn" target="_blank">
+        <div class="nav-icon">📍</div>
+        Store Map
+      </a>
+      <a href="tel:08069865380" class="nav-btn">
+        <div class="nav-icon">📞</div>
+        Call Store
+      </a>
+      <a href="https://south-tukoganj.myraymond.com" class="nav-btn" target="_blank">
+        <div class="nav-icon">🌐</div>
+        Website
+      </a>
+    </div>
+  </div>
+
+  <script>
+    /* High Entropy Combinatorial Engine for The Raymond Shop */
+    const combinatorialData = {
+      en: {
+        all: {
+          openers: [
+            "Outstanding experience at The Raymond Shop, TI Mall Indore!",
+            "Easily the gold standard for men's formal wear in Indore.",
+            "Had a truly pleasant shopping experience at this Raymond branch.",
+            "Raymond at TI Mall never disappoints when it comes to class and quality.",
+            "One of the best Raymond stores in Madhya Pradesh for fabrics and suits.",
+            "Always my first choice in Indore for premium formal shirting and suiting."
+          ],
+          details: [
+            "Their fabric collection from fine wool to pure Egyptian cotton is unmatched.",
+            "The in-house custom tailoring master took exact measurements and delivered perfection.",
+            "Superb curation of wedding tuxedos, bandhgala suits, and classic blazers.",
+            "Impeccable cloth drape, sharp collar stitching, and rich textures across every roll.",
+            "The variety in readymade formal wear as well as bespoke cut-pieces is exceptional."
+          ],
+          experience: [
+            "The staff is deeply knowledgeable, humble, and guides you with real styling patience.",
+            "Fitting trials were conducted seamlessly with quick turnaround time.",
+            "The showroom ambience inside TI Mall is comfortable, spacious, and dignified.",
+            "Great customer hospitality and prompt assistance right from entry to final billing."
+          ],
+          closers: [
+            "10/10 recommended for corporate attire and wedding shopping in Indore!",
+            "Definitely coming back for my next bespoke suit. Truly 5-star standard!",
+            "Raymond truly lives up to its heritage. Highly recommended!",
+            "Unbeatable quality and fit. Five stars all the way!"
+          ]
+        },
+        tailoring: {
+          openers: [
+            "The bespoke custom tailoring service here is world class!",
+            "Got a 2-piece formal suit stitched here, and the fit is absolute perfection.",
+            "The master tailor at this Raymond showroom has incredible craftsmanship."
+          ],
+          details: [
+            "Shoulder drop, sleeve length, and lapel curvature came out exactly as requested.",
+            "Collar fusing and inner lining quality feel exceptionally premium.",
+            "Pants fall cleanly with zero bunching, fitting comfortably throughout the day."
+          ],
+          experience: [
+            "Trial was done patiently and minor alterations were perfected quickly.",
+            "Master tailor listened carefully to all my custom preference details."
+          ],
+          closers: [
+            "Hands down the best bespoke tailoring destination in Indore!",
+            "Worth every single rupee for this level of precision tailoring. 5 stars!"
+          ]
+        },
+        suiting: {
+          openers: [
+            "Their collection of premium suiting and shirting fabric is top-tier.",
+            "Visited for wedding fabric shopping and found exquisite materials.",
+            "The purest wool blends and finest linen varieties are available here."
+          ],
+          details: [
+            "Lustrous fabric finish that stays crisp and wrinkle-free for long hours.",
+            "Wide variety of patterns from subtle glen checks to classic navy solids.",
+            "The fabric breathability and hand-feel clearly stand out as luxury grade."
+          ],
+          experience: [
+            "Sales executives patiently opened multiple fabric bolts to help us match shades.",
+            "Very clear guidance on fabric GSM and seasonal suit requirements."
+          ],
+          closers: [
+            "Must visit if you appreciate authentic, luxury menswear fabrics!",
+            "Completely satisfied with the purchase. 10/10 recommended in Indore!"
+          ]
+        },
+        service: {
+          openers: [
+            "Exceptional customer hospitality at The Raymond Shop TI Mall.",
+            "Shopping here was effortless, organized, and truly professional."
+          ],
+          details: [
+            "Staff maintains high standards of courteous and attentive customer service.",
+            "Showroom is impeccably clean, air-conditioned, and well organized."
+          ],
+          experience: [
+            "Seamless trial and billing process with very polite counter executives.",
+            "No aggressive sales pressure; only genuine, helpful styling recommendations."
+          ],
+          closers: [
+            "Five stars for memorable customer service and courteous staff!",
+            "Kudos to the entire Raymond team in South Tukoganj, Indore!"
+          ]
+        }
+      },
+      hi: {
+        all: {
+          openers: [
+            "The Raymond Shop TI Mall Indore par shopping karke bohot acha experience raha!",
+            "Indore me premium formal wear aur tailoring ke liye sabse reliable showroom hai.",
+            "Raymond ka naam hi bharosa hai, aur ye store us par 100% khara utarta hai.",
+            "Shaadi aur party wear ke liye kapde lene gaya tha, collection dekhkar dil khush ho gaya."
+          ],
+          details: [
+            "Pure wool aur linen fabric ka jo collection yahan mila wo pure Indore me behtareen hai.",
+            "Inka custom tailoring department ek number hai, fitting ekdum bespoke aayi.",
+            "Ready-made blazers aur 3-piece suits ka cut aur finishing behad classy hai.",
+            "Kapde ka fall aur stitching quality bilkul royal look deti hai."
+          ],
+          experience: [
+            "Staff ka behaviour bohot respectful aur helpful hai, har shade acche se dikhate hain.",
+            "Masterji ne fitting measurement bohot dhyan se liya aur time par delivery di.",
+            "Store ka ambience bohot dignified aur shopping experience bilkul comfortable raha."
+          ],
+          closers: [
+            "Indore ke sabhi formal lovers ke liye 10/10 recommended showroom!",
+            "Paisa vasool fitting aur fabric quality. 5-star rating banti hai!",
+            "Beshak next function ke kapde bhi yahin se liye jayenge. Superb work!"
+          ]
+        },
+        tailoring: {
+          openers: [
+            "Custom tailoring aur suit stitching ke liye ye store Indore me best hai!",
+            "Yahan se coat-pant silwaya, fitting aisi aayi jaise direct body ke liye bani ho."
+          ],
+          details: [
+            "Masterji ki craftsmanship lajawab hai, lapel aur shoulder fitting ekdum sharp hai.",
+            "Inner lining aur button detailing me poora dhyan diya gaya hai."
+          ],
+          experience: [
+            "First trial me hi 95% perfection tha, halki alteration bhi turant kardi.",
+            "Fitting par poora personal attention diya gaya bina kisi rush ke."
+          ],
+          closers: [
+            "Tailoring ke maamle me 5-star service! Highly recommended.",
+            "Bespoke formal suits ke liye Indore me best choice!"
+          ]
+        },
+        suiting: {
+          openers: [
+            "Suiting aur shirting fabric ka itna classy stock Indore me kam hi milta hai.",
+            "Pure wool blends aur fine Egyptian cotton ki range sach me lajawab hai."
+          ],
+          details: [
+            "Cloth ka texture aur feel pure luxury hai, wash aur iron ke baad bhi shine barkarar rehti hai.",
+            "Colors aur patterns bilkul modern aur royal elegance wale hain."
+          ],
+          experience: [
+            "Staff ne bina kisi thakan ke dher saare thaan kholkar matching karwayi.",
+            "Kapde ke weight aur season ke hisaab se sahi salah di."
+          ],
+          closers: [
+            "Full satisfaction mila, fabric quality me koi mukabla nahi!",
+            "Shaadi ke kapdo ke liye best showroom in TI Mall Indore."
+          ]
+        },
+        service: {
+          openers: [
+            "Store ke staff ka behaviour aur hospitality bohot shandar rahi.",
+            "TI Mall ke Raymond showroom me shopping karna bohot relaxing raha."
+          ],
+          details: [
+            "Staff bohot humble hai aur customer ko poora time deta hai.",
+            "Store neat, clean aur systematically organized hai."
+          ],
+          experience: [
+            "Fast billing aur smooth service mili.",
+            "Genuine suggestions dete hain bina kisi zabardasti ke."
+          ],
+          closers: [
+            "10/10 customer satisfaction! Keep it up team Raymond.",
+            "Shandar customer service ke liye poore 5 stars!"
+          ]
+        }
+      }
+    };
+
+    let activeCategory = 'all';
+    let activeLang = 'en';
+    const reviewRedirectUrl = "https://maps.app.goo.gl/cDBaZ3pP6Av1aEYo9";
+    
+    let recentReviews = [];
+
+    function getCryptoRandomItem(arr) {
+      if (!arr || arr.length === 0) return "";
+      const randomBuffer = new Uint32Array(1);
+      window.crypto.getRandomValues(randomBuffer);
+      const randomIndex = randomBuffer[0] % arr.length;
+      return arr[randomIndex];
+    }
+
+    function generateUniqueReview() {
+      const catData = (combinatorialData[activeLang] && combinatorialData[activeLang][activeCategory]) 
+                      ? combinatorialData[activeLang][activeCategory] 
+                      : combinatorialData[activeLang]['all'];
+
+      let newReview = "";
+      let attempts = 0;
+
+      do {
+        const p1 = getCryptoRandomItem(catData.openers);
+        const p2 = getCryptoRandomItem(catData.details);
+        const p3 = getCryptoRandomItem(catData.experience);
+        const p4 = getCryptoRandomItem(catData.closers);
+        newReview = `${p1} ${p2} ${p3} ${p4}`;
+        attempts++;
+      } while (recentReviews.includes(newReview) && attempts < 12);
+
+      recentReviews.push(newReview);
+      if (recentReviews.length > 6) recentReviews.shift();
+
+      return newReview;
+    }
+
+    function updateReviewText() {
+      document.getElementById('review-content').innerText = generateUniqueReview();
+    }
+
+    function setCategory(el, cat) {
+      activeCategory = cat;
+      document.querySelectorAll('.pill').forEach(btn => btn.classList.remove('active'));
+      el.classList.add('active');
+      updateReviewText();
+    }
+
+    function setLang(lang) {
+      activeLang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-hi').classList.toggle('active', lang === 'hi');
+      updateReviewText();
+    }
+
+    function shuffleReview() {
+      updateReviewText();
+    }
+
+    function copyAndRedirect() {
+      const textToCopy = document.getElementById('review-content').innerText.trim();
+      const btn = document.getElementById('copy-btn');
+
+      btn.classList.add('copied');
+      btn.innerHTML = "<span>✓</span> OPENING GOOGLE...";
+
+      const doRedirect = () => {
+        window.location.href = reviewRedirectUrl;
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          setTimeout(doRedirect, 250);
+        }).catch(doRedirect);
+      } else {
+        const dummy = document.createElement("textarea");
+        document.body.appendChild(dummy);
+        dummy.value = textToCopy;
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy);
+        setTimeout(doRedirect, 250);
+      }
+    }
+
+    updateReviewText();
+  </script>
+</body>
+</html>
