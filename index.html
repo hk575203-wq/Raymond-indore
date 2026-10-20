@@ -4,21 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>The Raymond Shop | TI Mall Indore</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-main: #070607;
-      --bg-card: #120e10;
-      --raymond-red: #a3141a;
+      --bg-dark: #080608;
+      --card-bg: #120d10;
+      --raymond-red: #a8131a;
+      --raymond-red-dark: #66080d;
       --gold-primary: #d4af37;
-      --gold-bright: #fceb92;
+      --gold-light: #fef08a;
       --gold-grad: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #996515 100%);
-      --text-white: #ffffff;
-      --text-soft: #eae7e8;
-      --text-muted: #968c90;
-      --border-gold: rgba(212, 175, 55, 0.25);
+      --text-main: #ffffff;
+      --text-soft: #ede8ea;
+      --text-muted: #9c9196;
+      --border-gold: rgba(212, 175, 55, 0.28);
       --border-subtle: rgba(255, 255, 255, 0.08);
     }
 
@@ -27,117 +25,115 @@
       margin: 0;
       padding: 0;
       -webkit-tap-highlight-color: transparent;
+      user-select: none;
     }
 
     body {
-      background-color: var(--bg-main);
-      color: var(--text-white);
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
       min-height: 100vh;
       min-height: 100dvh;
       display: flex;
       justify-content: center;
       align-items: stretch;
       background-image: 
-        radial-gradient(ellipse at 50% 0%, rgba(163, 20, 26, 0.25) 0%, transparent 65%),
-        radial-gradient(ellipse at 50% 100%, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+        radial-gradient(circle at 50% 0%, rgba(168, 19, 26, 0.22) 0%, transparent 60%),
+        radial-gradient(circle at 50% 100%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
       overflow-x: hidden;
     }
 
-    .app-container {
+    .app-wrapper {
       width: 100%;
-      max-width: 480px;
+      max-width: 460px;
       min-height: 100vh;
       min-height: 100dvh;
+      background: rgba(15, 11, 13, 0.95);
       display: flex;
       flex-direction: column;
-      position: relative;
-      background: rgba(14, 11, 13, 0.9);
-      border-left: 1px solid rgba(255, 255, 255, 0.04);
-      border-right: 1px solid rgba(255, 255, 255, 0.04);
+      border-left: 1px solid rgba(255, 255, 255, 0.05);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     }
 
-    /* Minimalist Heritage Header */
-    .brand-hero {
-      padding: 26px 20px 14px;
+    /* Minimalist Royal Header */
+    .brand-header {
+      padding: 24px 20px 12px;
       text-align: center;
-      position: relative;
     }
 
-    .since-tag {
-      font-size: 9.5px;
-      letter-spacing: 3.5px;
+    .vintage-label {
+      font-size: 10px;
+      letter-spacing: 3px;
       color: var(--gold-primary);
+      font-weight: 800;
       text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
-    .raymond-brand-title {
-      font-family: 'Cinzel', 'Georgia', serif;
-      font-size: 30px;
+    .brand-title {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 32px;
       font-weight: 700;
       letter-spacing: 4px;
       text-transform: uppercase;
       color: #ffffff;
-      margin-bottom: 2px;
-      text-shadow: 0 2px 14px rgba(0,0,0,0.8);
+      margin-bottom: 4px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
     }
 
-    .store-subline {
+    .location-subtitle {
       font-size: 11px;
       color: var(--text-muted);
-      letter-spacing: 1.8px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       font-weight: 600;
-      margin-top: 4px;
     }
 
-    .gold-rating-capsule {
+    .verified-badge {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      background: rgba(23, 17, 20, 0.9);
+      gap: 6px;
+      background: #1b1316;
       border: 1px solid var(--border-gold);
       padding: 5px 14px;
       border-radius: 20px;
       font-size: 11.5px;
       margin-top: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
-    .stars-cluster {
+    .stars-icon {
       color: #f59e0b;
       font-size: 13px;
       letter-spacing: 2px;
     }
 
-    /* 3-Step Action Strip */
-    .steps-strip {
+    /* 3 Step Instruction Strip */
+    .guide-strip {
       display: flex;
       justify-content: space-between;
       margin: 6px 16px 12px;
-      background: #0f0b0d;
-      padding: 9px 14px;
+      background: #0d090b;
+      padding: 8px 12px;
       border-radius: 12px;
       border: 1px solid var(--border-subtle);
     }
 
-    .step-item {
+    .guide-step {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       font-size: 11px;
       color: var(--text-muted);
       font-weight: 600;
     }
 
-    .step-circle {
+    .step-num {
       width: 17px;
       height: 17px;
       border-radius: 50%;
       background: var(--gold-grad);
-      color: #0b0708;
+      color: #000;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -146,59 +142,59 @@
     }
 
     /* Main Area */
-    .content-area {
+    .content-box {
       flex: 1;
-      padding: 0 16px 18px;
+      padding: 0 16px 16px;
       display: flex;
       flex-direction: column;
     }
 
-    /* Horizontal Category Scroller */
-    .category-scroll {
+    /* Category Buttons */
+    .pill-scroll {
       display: flex;
-      gap: 7px;
+      gap: 8px;
       overflow-x: auto;
       padding-bottom: 6px;
       scrollbar-width: none;
     }
-    .category-scroll::-webkit-scrollbar { display: none; }
+    .pill-scroll::-webkit-scrollbar { display: none; }
 
-    .category-pill {
-      background: #171114;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #9f9499;
-      padding: 8px 14px;
-      border-radius: 10px;
+    .category-btn {
+      background: #191215;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #a3989e;
+      padding: 9px 14px;
+      border-radius: 12px;
       font-size: 11.5px;
       font-weight: 700;
       white-space: nowrap;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 5px;
-      transition: all 0.15s ease;
+      gap: 6px;
+      transition: background 0.15s, transform 0.1s;
     }
 
-    .category-pill:active {
+    .category-btn:active {
       transform: scale(0.96);
     }
 
-    .category-pill.active {
-      background: linear-gradient(135deg, #a6141a 0%, #700a0e 100%);
+    .category-btn.active {
+      background: linear-gradient(135deg, #a8131a 0%, #6e080e 100%);
       color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 4px 14px rgba(166, 20, 26, 0.4);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 15px rgba(168, 19, 26, 0.4);
     }
 
-    /* Utility Row (Counter & Language) */
-    .utility-row {
+    /* Sub Toolbar */
+    .sub-toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin: 10px 4px 8px;
     }
 
-    .entropy-label {
+    .status-badge {
       font-size: 11px;
       color: var(--gold-primary);
       font-weight: 700;
@@ -207,102 +203,111 @@
       gap: 6px;
     }
 
-    .live-dot {
-      width: 6.5px;
-      height: 6.5px;
+    .dot-green {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: #10b981;
       box-shadow: 0 0 8px #10b981;
     }
 
-    .lang-toggle {
+    .lang-switcher {
       display: flex;
-      background: #0d090b;
+      background: #0d080a;
       padding: 2.5px;
       border-radius: 8px;
       border: 1px solid var(--border-subtle);
     }
 
-    .lang-btn {
+    .lang-opt {
       background: transparent;
       border: none;
-      color: #7b7175;
+      color: #7d7277;
       font-size: 11px;
-      padding: 4px 11px;
+      padding: 4px 12px;
       border-radius: 6px;
       font-weight: 800;
       cursor: pointer;
     }
 
-    .lang-btn.active {
-      background: #25181c;
+    .lang-opt.active {
+      background: #25171b;
       color: #ffffff;
     }
 
-    /* Luxury Review Box Card */
-    .review-display-card {
-      position: relative;
-      background: var(--bg-card);
+    /* Review Display Box */
+    .review-card {
+      background: var(--card-bg);
       border: 1px solid var(--border-gold);
       border-radius: 18px;
-      padding: 16px 50px 14px 16px;
-      min-height: 110px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      padding: 18px 18px 14px;
+      min-height: 105px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
       display: flex;
       flex-direction: column;
       justify-content: center;
+      cursor: pointer;
+      position: relative;
     }
 
-    .review-text-body {
-      font-size: 13.5px;
+    .review-card:active {
+      background: #181215;
+    }
+
+    .review-text {
+      font-size: 14px;
       line-height: 1.6;
       color: var(--text-soft);
       font-weight: 500;
-      outline: none;
+      user-select: text;
     }
 
-    .edit-notice {
-      margin-top: 7px;
-      font-size: 10px;
-      color: #7c7277;
+    .tap-hint {
+      margin-top: 8px;
+      font-size: 10.5px;
+      color: #7e7379;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
-    /* Fast Round Refresh Button */
-    .btn-shuffle {
-      position: absolute;
-      right: 12px;
-      top: 14px;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #201418;
-      border: 1px solid var(--border-gold);
-      color: var(--gold-bright);
+    /* Big Thumb-Friendly Shuffle Button */
+    .btn-next-review {
+      margin-top: 10px;
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px dashed var(--border-gold);
+      background: rgba(30, 20, 24, 0.6);
+      color: var(--gold-light);
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 17px;
-      cursor: pointer;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-      transition: transform 0.1s ease;
+      gap: 8px;
+      transition: background 0.15s, transform 0.1s;
     }
 
-    .btn-shuffle:active {
-      transform: scale(0.92) rotate(90deg);
+    .btn-next-review:active {
       background: var(--raymond-red);
-      color: #fff;
+      color: #ffffff;
+      transform: scale(0.98);
+      border-style: solid;
     }
 
-    /* High-Impact CTA Button */
-    .btn-submit-cta {
+    /* Main CTA Button */
+    .cta-submit {
       margin-top: 14px;
       width: 100%;
       padding: 16px;
-      border-radius: 14px;
+      border-radius: 16px;
       border: none;
       background: var(--gold-grad);
-      color: #0c0809;
-      font-size: 14.5px;
+      color: #0b0708;
+      font-size: 15px;
       font-weight: 900;
       letter-spacing: 0.6px;
       cursor: pointer;
@@ -310,24 +315,24 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      box-shadow: 0 5px 22px rgba(212, 175, 55, 0.3);
-      transition: all 0.15s ease;
+      box-shadow: 0 6px 24px rgba(212, 175, 55, 0.35);
+      transition: transform 0.1s;
     }
 
-    .btn-submit-cta:active {
+    .cta-submit:active {
       transform: scale(0.97);
     }
 
-    .btn-submit-cta.state-copied {
+    .cta-submit.copied {
       background: #10b981 !important;
       color: #ffffff !important;
-      box-shadow: 0 5px 22px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 6px 24px rgba(16, 185, 129, 0.4);
     }
 
-    /* Bottom Dock Bar */
-    .dock-bar {
+    /* Bottom Dock */
+    .bottom-dock {
       margin-top: auto;
-      background: #0c080a;
+      background: #0b0709;
       border-top: 1px solid var(--border-subtle);
       padding: 12px 14px 16px;
       display: flex;
@@ -335,7 +340,7 @@
       align-items: center;
     }
 
-    .dock-link {
+    .dock-btn {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -346,11 +351,11 @@
       font-weight: 700;
     }
 
-    .dock-link:active {
-      color: var(--gold-bright);
+    .dock-btn:active {
+      color: var(--gold-light);
     }
 
-    .dock-icon-box {
+    .dock-icon {
       width: 40px;
       height: 40px;
       border-radius: 10px;
@@ -365,83 +370,87 @@
 </head>
 <body>
 
-  <div class="app-container">
+  <div class="app-wrapper">
     
-    <!-- Clean Minimalist Header -->
-    <header class="brand-hero">
-      <div class="since-tag">SINCE 1925</div>
-      <h1 class="raymond-brand-title">Raymond</h1>
-      <div class="store-subline">Treasure Island Mall • South Tukoganj • Indore</div>
+    <!-- Minimalist Royal Header -->
+    <header class="brand-header">
+      <div class="vintage-label">SINCE 1925</div>
+      <h1 class="brand-title">Raymond</h1>
+      <div class="location-subtitle">Treasure Island Mall • South Tukoganj • Indore</div>
 
-      <div class="gold-rating-capsule">
+      <div class="verified-badge">
         <span style="color:#4285F4;font-weight:900;">G</span> Google Verified Store
-        <span class="stars-cluster">★★★★★</span>
+        <span class="stars-icon">★★★★★</span>
       </div>
     </header>
 
-    <!-- 3-Step Micro Strip -->
-    <div class="steps-strip">
-      <div class="step-item"><span class="step-circle">1</span> Pick Topic</div>
-      <div class="step-item"><span class="step-circle">2</span> Tap Button</div>
-      <div class="step-item"><span class="step-circle">3</span> Paste & Post</div>
+    <!-- 3-Step Guide -->
+    <div class="guide-strip">
+      <div class="guide-step"><span class="step-num">1</span> Pick Topic</div>
+      <div class="guide-step"><span class="step-num">2</span> Tap Button</div>
+      <div class="guide-step"><span class="step-num">3</span> Paste & Post</div>
     </div>
 
     <!-- Main Dynamic Section -->
-    <main class="content-area">
+    <main class="content-box">
       
       <!-- Category Filter Pills -->
-      <div class="category-scroll">
-        <button class="category-pill active" onclick="setCategory(this, 'all')">
+      <div class="pill-scroll">
+        <button class="category-btn active" onclick="switchCategory(this, 'all')">
           <span>✨</span> ALL REVIEWS
         </button>
-        <button class="category-pill" onclick="setCategory(this, 'tailoring')">
+        <button class="category-btn" onclick="switchCategory(this, 'tailoring')">
           <span>🧵</span> CUSTOM TAILORING
         </button>
-        <button class="category-pill" onclick="setCategory(this, 'suiting')">
+        <button class="category-btn" onclick="switchCategory(this, 'suiting')">
           <span>👔</span> SUITS & FABRICS
         </button>
-        <button class="category-pill" onclick="setCategory(this, 'service')">
+        <button class="category-btn" onclick="switchCategory(this, 'service')">
           <span>⭐</span> STORE & STAFF
         </button>
       </div>
 
       <!-- Live Indicator & Language Switch -->
-      <div class="utility-row">
-        <div class="entropy-label">
-          <span class="live-dot"></span> 100% Unique Review
+      <div class="sub-toolbar">
+        <div class="status-badge">
+          <span class="dot-green"></span> 100% Unique Review
         </div>
-        <div class="lang-toggle">
-          <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">EN</button>
-          <button class="lang-btn" id="btn-hi" onclick="setLanguage('hi')">HINGLISH</button>
+        <div class="lang-switcher">
+          <button class="lang-opt active" id="btn-en" onclick="switchLanguage('en')">EN</button>
+          <button class="lang-opt" id="btn-hi" onclick="switchLanguage('hi')">HINGLISH</button>
         </div>
       </div>
 
-      <!-- Instant Review Card (Default Real Review Loaded) -->
-      <div class="review-display-card">
-        <div class="review-text-body" id="review-content" contenteditable="true" spellcheck="false">Outstanding experience at The Raymond Shop, TI Mall Indore! Their fabric collection from fine merino wool to pure Egyptian cotton is unrivaled. The staff is deeply knowledgeable, humble, and guides you with incredible styling patience. 10/10 recommended for corporate attire and wedding shopping in Indore!</div>
-        <div class="edit-notice">✎ Tap text above to personalize if needed</div>
-        <button class="btn-shuffle" onclick="shuffleReview()" title="Next Review">⟳</button>
+      <!-- Instant Review Card (Tap to Shuffle) -->
+      <div class="review-card" onclick="triggerShuffle()" title="Tap to shuffle review">
+        <div class="review-text" id="review-content">Loading authentic review...</div>
+        <div class="tap-hint">⚡ Tap card to shuffle or click button below</div>
       </div>
 
-      <!-- Action Button -->
-      <button class="btn-submit-cta" id="copy-btn" onclick="copyAndRedirect()">
+      <!-- Big Thumb-Friendly Shuffle Button -->
+      <button class="btn-next-review" onclick="triggerShuffle()">
+        <span>🎲</span> GENERATE NEXT REVIEW (DOOSRA REVIEW)
+      </button>
+
+      <!-- Primary Action Button -->
+      <button class="cta-submit" id="copy-btn" onclick="handleCopyAndRedirect()">
         <span>📋</span> COPY & RATE 5-STAR
       </button>
 
     </main>
 
     <!-- Bottom Navigation Dock -->
-    <footer class="dock-bar">
-      <a href="https://maps.app.goo.gl/cDBaZ3pP6Av1aEYo9" class="dock-link" target="_blank">
-        <div class="dock-icon-box">📍</div>
+    <footer class="bottom-dock">
+      <a href="https://maps.app.goo.gl/cDBaZ3pP6Av1aEYo9" class="dock-btn" target="_blank">
+        <div class="dock-icon">📍</div>
         Store Map
       </a>
-      <a href="tel:08069865380" class="dock-link">
-        <div class="dock-icon-box">📞</div>
+      <a href="tel:08069865380" class="dock-btn">
+        <div class="dock-icon">📞</div>
         Call Store
       </a>
-      <a href="https://south-tukoganj.myraymond.com" class="dock-link" target="_blank">
-        <div class="dock-icon-box">🌐</div>
+      <a href="https://south-tukoganj.myraymond.com" class="dock-btn" target="_blank">
+        <div class="dock-icon">🌐</div>
         Website
       </a>
     </footer>
@@ -449,118 +458,131 @@
   </div>
 
   <script>
-    /* Combinatorial Review Matrix */
-    const combinatorialData = {
+    /* Multi-Archetype Review Library (Short, Medium, Detailed) */
+    const reviewPool = {
       en: {
-        all: {
-          openers: [
-            "Outstanding experience at The Raymond Shop, TI Mall Indore!",
-            "Easily the gold standard for men's bespoke formal wear in Indore.",
-            "Had a truly pleasant and royal shopping experience at this Raymond branch.",
-            "Raymond at TI Mall never fails to deliver unmatched sophistication and class.",
-            "One of the finest Raymond showrooms in Madhya Pradesh for fabrics and suits.",
-            "Always my ultimate first choice in Indore for luxury formal clothing.",
-            "Visited The Raymond Shop at South Tukoganj today and was thoroughly impressed.",
-            "A legacy store that consistently upholds top-tier craftsmanship and style."
-          ],
-          details: [
-            "Their fabric collection from fine merino wool to pure Egyptian cotton is unrivaled.",
-            "The in-house master tailor took precise measurements and delivered absolute perfection.",
-            "Superb curation of wedding tuxedos, bandhgala suits, and classic boardroom blazers.",
-            "Impeccable cloth drape, crisp collar stitching, and rich hand-feel across all fabric bolts.",
-            "The variety in readymade formal wear as well as bespoke cut-pieces is remarkable.",
-            "Flawless stitch lines, clean silhouette drape, and exceptional lapel detailing.",
-            "Premium textures and timeless patterns that look truly distinguished in person.",
-            "Top-grade lining materials and durable button detailing on every finished garment."
-          ],
-          experience: [
-            "The staff is deeply knowledgeable, humble, and guides you with incredible styling patience.",
-            "Fitting trials were conducted effortlessly with punctual delivery on the promised date.",
-            "The showroom ambience inside TI Mall is comfortable, spacious, and dignified.",
-            "Great customer hospitality and prompt assistance right from entry to final packaging.",
-            "Executives patiently helped me match custom shirt fabrics with complementary trousers.",
-            "Very transparent pricing and professional guidance on seasonal fabric weights.",
-            "Courteous team that values customer satisfaction above everything else."
-          ],
-          closers: [
-            "10/10 recommended for corporate attire and wedding shopping in Indore!",
-            "Definitely coming back for my next bespoke suit. Truly 5-star standard!",
-            "Raymond truly lives up to its timeless heritage. Highly recommended!",
-            "Unbeatable quality, precision tailoring, and fit. Five stars all the way!",
-            "The definitive shopping destination for discerning gentlemen in Indore.",
-            "A seamless, five-star experience from fabric selection to final fit!",
-            "Keep up the brilliant craftsmanship and exceptional customer care!"
-          ]
-        },
-        tailoring: {
-          openers: [
-            "The custom bespoke tailoring service here is genuinely world class!",
-            "Got a 2-piece formal suit stitched here, and the fit is absolute perfection.",
-            "The master tailor at this Raymond showroom possesses incredible craftsmanship.",
-            "Bespoke tailoring at this Raymond store is simply unmatched anywhere in Indore.",
-            "If you want razor-sharp suit tailoring, this is the place to trust.",
-            "Delighted with the accuracy and precision of their in-house tailoring master.",
-            "Superb bespoke experience for both formal shirts and custom three-piece suits."
-          ],
-          details: [
-            "Shoulder drop, sleeve length, and lapel curvature came out exactly as requested.",
-            "Collar fusing and inner jacket lining quality feel exceptionally luxurious.",
-            "Trousers fall cleanly with zero bunching, fitting comfortably throughout the day.",
-            "Precision button placement and fine hand-finished stitch detailing on the jacket.",
-            "The drape across the chest and back gives a flattering, confident posture.",
-            "Flawlessly tailored cuffs and clean waistline finish with superior comfort.",
-            "Bespoke craftsmanship that rivals high-end bespoke atelier studios."
-          ],
-          experience: [
-            "Trial was done patiently and minor alterations were perfected effortlessly.",
-            "Master tailor listened carefully to all my personalized fit preferences.",
-            "Prompt delivery right on the promised fitting date without any delays.",
-            "Staff took the time to review posture adjustments during the trial session.",
-            "Smooth trial room experience with excellent lighting and large mirrors."
-          ],
-          closers: [
-            "Hands down the best bespoke tailoring destination in Indore!",
-            "Worth every single rupee for this level of precision tailoring. 5 stars!",
-            "Tailoring quality that easily competes with international luxury brands!",
-            "Found my permanent spot for all future formal suit stitching in Indore.",
-            "Completely satisfied with the craftsmanship. Highest recommendation!"
-          ]
-        },
-        suiting: {
-          openers: [
-            "Their collection of premium suiting and shirting fabric is simply top-tier.",
-            "Visited for wedding fabric shopping and found exquisite materials.",
-            "The purest wool blends and finest linen varieties are available here.",
-            "Exceptional variety of premium readymade suits and custom cut-pieces.",
-            "One of the largest selections of high-thread-count formal fabrics in Indore.",
-            "If you value authentic fabric textures and rich colors, visit this store.",
-            "Had a great time exploring their vast catalog of ceremonial suit fabrics."
-          ],
-          details: [
-            "Lustrous fabric finish that stays crisp, breathable, and wrinkle-resistant for hours.",
-            "Wide variety of patterns from subtle glen checks to classic royal navy solids.",
-            "The fabric breathability and hand-feel clearly stand out as luxury grade.",
-            "Rich pastel shades and royal party tones that look stunning under daylight.",
-            "Fine micro-patterns and textured weaves ideal for both work and festive wear.",
-            "Pure cotton fabrics that feel feather-light yet maintain a structured drape.",
-            "High Super-count wools that carry a distinguished sheen and elegance."
-          ],
-          experience: [
-            "Sales executives patiently unrolled multiple fabric bolts to help us compare tones.",
-            "Very clear guidance on fabric GSM and seasonal suit requirements.",
-            "Warm hospitality and genuine styling recommendations from the counter team.",
-            "Helpful suggestions on matching ties, pocket squares, and lining fabrics.",
-            "Attentive staff that made fabric selection enjoyable and stress-free."
-          ],
-          closers: [
-            "Must visit if you appreciate authentic, luxury menswear fabrics!",
-            "Completely satisfied with the purchase. 10/10 recommended in Indore!",
-            "The definitive destination in Indore for formal wardrobe upgrades!",
-            "Unquestionable fabric authenticity and premium value. 5 stars all the way!",
-            "Will definitely be returning for all upcoming family celebrations!"
-          ]
-        },
-        service: {
-          openers: [
-            "Exceptional customer hospitality at The Raymond Shop, TI Mall Indore.",
-            "Sh
+        all: [
+          // Short & Punchy
+          "Best place in Indore for premium formal suits! Raymond never disappoints.",
+          "Top-tier fabric collection at TI Mall. Best menswear shopping in town. 5 stars!",
+          "Master tailor here has magic in his hands. Perfect suit fitting on the first trial!",
+          "Pure luxury fabrics and outstanding customer service. 10/10 recommended in Indore!",
+          "If you want razor-sharp formal suits and jackets, The Raymond Shop is unbeatable.",
+          
+          // Medium & Focused
+          "Visited the TI Mall store for wedding shopping. The pure wool and linen fabric collection is easily the finest in Indore. Staff was very helpful with matching shades.",
+          "Got a custom 2-piece corporate suit stitched here. Shoulder drape and trouser fall are 100% spot on. Worth every single rupee for this level of bespoke tailoring.",
+          "Outstanding customer hospitality by the Raymond team at South Tukoganj. Clean showroom, polite staff, and zero sales pressure. Highly satisfied!",
+          "Their shirting fabric range from Egyptian cotton to pure linen is phenomenal. Got three formal shirts stitched and all three fit like a glove.",
+          "One of the best Raymond outlets in MP. Impeccable tailoring craftsmanship and punctual delivery right on the promised date.",
+          
+          // Detailed Comprehensive
+          "Had a truly royal shopping experience at The Raymond Shop, TI Mall Indore. Their selection of ceremonial tuxedos, bandhgala suits, and fine wool fabrics is unrivaled in the city. The master tailor took precise measurements and delivered a flawless fit. Definitely my permanent spot for luxury formal wear!",
+          "Easily the gold standard for men's bespoke formal wear in Indore. From fabric selection to the final trial, the entire process was seamless and dignified. The showroom ambience is top class and the staff guides you with genuine styling expertise. 10/10 recommended for corporate attire and wedding shopping!"
+        ],
+        tailoring: [
+          "The bespoke custom tailoring service here is genuinely world class! Master tailor took exact measurements.",
+          "Got a 2-piece formal suit stitched here, and the fit is absolute perfection. 5 stars!",
+          "Shoulder drop, sleeve length, and lapel curvature came out exactly as requested. Incredible craftsmanship!",
+          "First trial was 95% perfect and minor tweaks were done promptly. Best suit stitching in Indore.",
+          "Trousers fall cleanly with zero bunching. Superior comfort throughout the day. Highly recommended!"
+        ],
+        suiting: [
+          "Their collection of premium wool blends and ceremonial suiting is simply top tier in Indore.",
+          "Visited for wedding fabric shopping and found exquisite materials. Lustrous finish and royal feel!",
+          "Wide variety of patterns from subtle glen checks to classic royal navy solids. Best fabric store!",
+          "Pure Egyptian cotton and fine linen fabrics that stay crisp and wrinkle-free for long hours. 5 stars!",
+          "Unbeatable variety of luxury cut-pieces and custom suit lengths at TI Mall."
+        ],
+        service: [
+          "Exceptional customer hospitality at The Raymond Shop, TI Mall Indore. Polite and helpful team!",
+          "Shopping here was effortless, organized, and truly professional. No aggressive sales pressure.",
+          "Staff showed immense patience during fabric matching and fitting comparisons. 10/10 service!",
+          "Showroom is impeccably clean, air-conditioned, and systematically arranged. Great store ambience."
+        ]
+      },
+      hi: {
+        all: [
+          // Short & Punchy
+          "Indore me coat-pant aur suit fitting ke liye sabse best showroom! 5 stars.",
+          "Masterji ne first trial me hi ekdum perfect fitting di. Maza aa gaya!",
+          "TI Mall me shaadi ke kapdo ke liye Raymond se behtar koi store nahi hai.",
+          "Pure wool aur linen fabric ka lajawab stock. Bespoke tailoring 10/10!",
+          "Bespoke suits ke liye Indore me sabse reliable showroom. Paisa vasool quality!",
+          
+          // Medium & Focused
+          "Bhai ki shaadi ke liye suit fabric liya tha. Inka fabric drape aur texture pure luxury hai. Masterji ne stitching bilkul royal look ki di hai. Full satisfaction!",
+          "TI Mall ke Raymond store ka staff bohot polite aur cooperative hai. Aaram se saare fabric compare karwaye bina kisi jaldbaazi ke. Great shopping experience!",
+          "Yahan se do formal suits silwaye, fitting aisi aayi jaise direct designer piece ho. Delivery bhi bilkul promised date par mili. Highly recommended in Indore!",
+          "Formal shirts ki stitching aur collar finish ek number aayi hai. Fabric wash ke baad bhi crisp rehta hai.",
+          
+          // Detailed Comprehensive
+          "The Raymond Shop TI Mall Indore par shopping karke bohot shandar experience raha. Pure wool aur Egyptian cotton fabric ka stock pure city me best hai. Tailoring master ne har choti requirement ka dhyan rakha aur suit ki fitting ek number aayi. Shaadi aur corporate formal shopping ke liye 10/10 recommended!"
+        ],
+        tailoring: [
+          "Custom tailoring aur suit stitching ke liye ye store Indore me best hai! Perfect fitting mili.",
+          "Yahan se coat-pant silwaya, fitting aisi aayi jaise direct body ke liye bani ho. Masterji ki craftsmanship lajawab hai!",
+          "Jacket ka fall aur trouser ki length 100% accurate baithi. Delivery bhi time par mili.",
+          "Bespoke tailoring ka jo perfection yahan mila wo readymade suits me kabhi nahi milta. 5 stars!"
+        ],
+        suiting: [
+          "Suiting aur shirting fabric ka itna classy stock Indore me kam hi milta hai. Pure luxury feel!",
+          "Pure wool blends aur fine Egyptian cotton ki range sach me lajawab hai. Shaadi ke kapdo ke liye best store.",
+          "Cloth ka texture aur feel pure luxury hai, wash aur iron ke baad bhi shine barkarar rehti hai.",
+          "Unmatched fabric collection in TI Mall Indore. Full 5-star quality!"
+        ],
+        service: [
+          "Store ke staff ka behaviour aur hospitality bohot shandar rahi. Polite aur attentive team!",
+          "Bina kisi sales pressure ke aaram se saare fabric dikhaye aur sahi styling advice di.",
+          "Fast billing aur smooth fitting process mila. 10/10 customer satisfaction in Indore!",
+          "Store neat, clean aur systematically organized hai. Shopping ka experience royal raha."
+        ]
+      }
+    };
+
+    let currentCategory = 'all';
+    let currentLang = 'en';
+    let previousReview = "";
+    const redirectGoogleUrl = "https://maps.app.goo.gl/cDBaZ3pP6Av1aEYo9";
+
+    // Instant Fast Random Picker (Zero Delay)
+    function pickRandomReview() {
+      const langItems = reviewPool[currentLang] || reviewPool['en'];
+      const list = langItems[currentCategory] || langItems['all'];
+      
+      let candidate = "";
+      let attempts = 0;
+      do {
+        const randomIndex = Math.floor(Math.random() * list.length);
+        candidate = list[randomIndex];
+        attempts++;
+      } while (candidate === previousReview && list.length > 1 && attempts < 8);
+
+      previousReview = candidate;
+      return candidate;
+    }
+
+    function renderReview() {
+      const box = document.getElementById('review-content');
+      if (box) {
+        box.innerText = pickRandomReview();
+      }
+    }
+
+    function switchCategory(btn, cat) {
+      currentCategory = cat;
+      const allBtns = document.querySelectorAll('.category-btn');
+      allBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderReview();
+    }
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-hi').classList.toggle('active', lang === 'hi');
+      renderReview();
+    }
+
+    function triggerShuffle() {
+      r
