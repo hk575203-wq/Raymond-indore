@@ -6,21 +6,19 @@
   <title>The Raymond Shop | TI Mall Indore</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-main: #070607;
-      --bg-card: #110e10;
-      --bg-inner: #171315;
-      --raymond-red: #9e1319;
-      --raymond-red-dark: #66090d;
+      --bg-card: #120e10;
+      --raymond-red: #a3141a;
       --gold-primary: #d4af37;
       --gold-bright: #fceb92;
       --gold-grad: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #996515 100%);
       --text-white: #ffffff;
       --text-soft: #eae7e8;
       --text-muted: #968c90;
-      --border-gold: rgba(212, 175, 55, 0.22);
+      --border-gold: rgba(212, 175, 55, 0.25);
       --border-subtle: rgba(255, 255, 255, 0.08);
     }
 
@@ -41,7 +39,7 @@
       justify-content: center;
       align-items: stretch;
       background-image: 
-        radial-gradient(ellipse at 50% 0%, rgba(158, 19, 25, 0.25) 0%, transparent 65%),
+        radial-gradient(ellipse at 50% 0%, rgba(163, 20, 26, 0.25) 0%, transparent 65%),
         radial-gradient(ellipse at 50% 100%, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
       overflow-x: hidden;
     }
@@ -54,7 +52,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      background: rgba(14, 11, 13, 0.85);
+      background: rgba(14, 11, 13, 0.9);
       border-left: 1px solid rgba(255, 255, 255, 0.04);
       border-right: 1px solid rgba(255, 255, 255, 0.04);
     }
@@ -75,7 +73,6 @@
       margin-bottom: 4px;
     }
 
-    /* Pure Clean Raymond Wordmark (No Clunky Emblems) */
     .raymond-brand-title {
       font-family: 'Cinzel', 'Georgia', serif;
       font-size: 30px;
@@ -419,9 +416,9 @@
         </div>
       </div>
 
-      <!-- Instant Review Card -->
+      <!-- Instant Review Card (Default Real Review Loaded) -->
       <div class="review-display-card">
-        <div class="review-text-body" id="review-content" contenteditable="true" spellcheck="false">Loading review...</div>
+        <div class="review-text-body" id="review-content" contenteditable="true" spellcheck="false">Outstanding experience at The Raymond Shop, TI Mall Indore! Their fabric collection from fine merino wool to pure Egyptian cotton is unrivaled. The staff is deeply knowledgeable, humble, and guides you with incredible styling patience. 10/10 recommended for corporate attire and wedding shopping in Indore!</div>
         <div class="edit-notice">✎ Tap text above to personalize if needed</div>
         <button class="btn-shuffle" onclick="shuffleReview()" title="Next Review">⟳</button>
       </div>
@@ -452,7 +449,7 @@
   </div>
 
   <script>
-    /* Massive 4,000+ Combinatorial Review Matrix (Zero Lag) */
+    /* Combinatorial Review Matrix */
     const combinatorialData = {
       en: {
         all: {
@@ -566,6 +563,4 @@
         service: {
           openers: [
             "Exceptional customer hospitality at The Raymond Shop, TI Mall Indore.",
-            "Shopping here was effortless, organized, and truly professional.",
-            "Remarkable hospitality and warm reception by the entire Raymond team.",
-            "One of t
+            "Sh
