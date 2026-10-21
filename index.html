@@ -356,7 +356,6 @@
   </div>
 
   <script>
-    // Fast Curated Reviews Pool (Direct, No Heavy Loops)
     var reviews = {
       en: {
         all: [
@@ -418,9 +417,10 @@
     var currentCat = 'all';
     var currentLang = 'en';
     var lastIndex = 0;
-    var redirectUrl = "https://maps.app.goo.gl/cDBaZ3pP6Av1aEYo9";
+    
+    // Direct Official Google Review Writing Popup URL using retrieved Place ID[span_2](start_span)[span_2](end_span)
+    var redirectUrl = "https://search.google.com/local/writereview?placeid=ChIJlywjuuz9YjkRvyQSetegjQo";
 
-    // O(1) Instant Random Picker (Zero Loop, Zero Freezing)
     function nextReview() {
       var list = reviews[currentLang][currentCat];
       if (!list || list.length === 0) list = reviews['en']['all'];
